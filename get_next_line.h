@@ -6,7 +6,7 @@
 /*   By: alisseye <alisseye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 15:19:03 by alisseye          #+#    #+#             */
-/*   Updated: 2024/10/10 19:16:02 by alisseye         ###   ########.fr       */
+/*   Updated: 2024/10/12 19:27:18 by alisseye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,14 @@
 # include <unistd.h>
 # include <stdio.h>
 
-# define BUFFER_SIZE 8
-
-typedef struct s_list
-{
-	int				fd;
-	char			*str;
-	struct s_list	*next;
-}	t_list;
-
 char	*get_next_line(int fd);
+char	*ft_fillbuffer(int fd, char *buffer);
+char	*ft_getline(char *buffer);
+char	*ft_updbuffer(char *buffer);
+
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
-t_list	*ft_lstnew(int fd, char *str);
-// t_list	*ft_lstclean(int fd, t_list **lst);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strdup(const char *s);
 
 #endif
