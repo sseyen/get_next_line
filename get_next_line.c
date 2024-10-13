@@ -6,7 +6,7 @@
 /*   By: alisseye <alisseye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 18:21:25 by alisseye          #+#    #+#             */
-/*   Updated: 2024/10/12 22:33:04 by alisseye         ###   ########.fr       */
+/*   Updated: 2024/10/13 16:34:38 by alisseye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ char	*ft_getrest(char *buffer)
 	i = 0;
 	while (buffer[i] && buffer[i] != '\n')
 		i++;
-	if (!buffer[i])
+	if (!buffer[i] || !buffer[i + 1])
 	{
 		free(buffer);
 		return (NULL);
 	}
-	tmp = (char *)malloc(sizeof(char) * (ft_strlen(buffer) - i + 1));
+	tmp = (char *)malloc(sizeof(char) * (ft_strlen(buffer) - i));
 	if (!tmp)
 		return (NULL);
 	i++;
@@ -64,7 +64,7 @@ char	*ft_getline(char *buffer)
 	len = 0;
 	while (buffer[len] && buffer[len] != '\n')
 		len++;
-	if (buffer[len] && buffer[len] == '\n')
+	if (buffer[len] == '\n')
 		len++;
 	if (len == 0)
 		return (NULL);
