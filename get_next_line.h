@@ -6,7 +6,7 @@
 /*   By: alisseye <alisseye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 15:19:03 by alisseye          #+#    #+#             */
-/*   Updated: 2024/10/13 16:41:07 by alisseye         ###   ########.fr       */
+/*   Updated: 2024/10/14 18:58:56 by alisseye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+
+# ifndef BUFFER_SIZE
+# define BUFFER_SIZE 8
+# endif
 
 char	*get_next_line(int fd);
 char	*ft_fillbuffer(int fd, char *buffer);
