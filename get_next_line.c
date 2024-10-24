@@ -6,7 +6,7 @@
 /*   By: alisseye <alisseye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 18:21:25 by alisseye          #+#    #+#             */
-/*   Updated: 2024/10/13 16:34:38 by alisseye         ###   ########.fr       */
+/*   Updated: 2024/10/24 16:52:43 by alisseye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,10 @@ char	*ft_getrest(char *buffer)
 	}
 	tmp = (char *)malloc(sizeof(char) * (ft_strlen(buffer) - i));
 	if (!tmp)
+	{
+		free(buffer);
 		return (NULL);
+	}
 	i++;
 	j = 0;
 	while (buffer[i])
